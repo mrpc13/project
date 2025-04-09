@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="MrPC/public/images/pcclogo.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>Portfolio.Prakhar</title>
+    <style type="text/css">
+        h1 {
+            font-family: cursive;
+            color:yellow;
+            display: flex;
+            justify-content: center;
+            padding-top: 15px;
+        }
+
+        .bi-facebook {
+            color: blue;
+        }
+
+        .bi-instagram {
+            color: palevioletred;
+        }
+
+        .bi-youtube {
+            color: red;
+            width: 15vwx;
+        }
+
+        .bi-linkedin {
+            color: blue;
+        }
+
+        .top {
+            color: white;
+            border: 1px solid black;
+            border-radius: 10px;
+            background-color:hsla(242, 79%, 15%, 0.682);
+            display: grid;
+            grid-template-columns: 3fr 6fr 3fr;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        .links {
+            margin-right: 25px;
+            padding-top: 8px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            transition: transform 2s ease-in-out;
+        }
+
+        a:hover {
+            transform: scale(1.5);
+        }
+
+        nav a {
+            text-decoration: none;
+
+        }
+
+        nav li {
+            list-style-type: none;
+            display: flex;
+            flex-direction: row;
+
+        }
+
+        nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        button {
+            border-radius: 5px;
+            background-color:black;
+            text-align: center;
+            font-size: 20px;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        button:hover {
+            transform: scale(0.7);
+        }
+
+        .intro {
+            font-family: sans-serif;
+            font-size: 30px;
+            font-family: monospace;
+            font-size: 30px;
+        }
+
+        .name {
+            font-family: cursive;
+            font-size: 50px;
+        }
+
+        .subtitle {
+            font-family: monospace;
+            font-size: 20px;
+        }
+
+        .home {
+    padding-left: 150px;
+    padding-top: 35px;
+    display: grid;
+    grid-template-columns: 6fr 6fr;
+    background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5), 
+            rgba(0, 0, 0, 0.5)
+        ), 
+        url(../public/images/binaryblack.webp);
+    height: 420px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white; /* Ensures text is visible on a dark background */
+}
+
+        .prakhar {
+            padding-top: -900px;
+            border: solid 5px white;
+            width: 260px;
+            height: 350px;
+            border-radius: 35px;
+        }
+
+        section h1 {
+            text-align: center;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: 4fr 4fr 4fr;
+        }
+
+        .skills {
+            background-image: url(../public/images/Banner_RedSkies.png);
+            background-size: cover;
+            height: 240px;
+            width: 995px;
+        }
+
+        .logos {
+            margin-top: -180px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .logos span:hover {
+            transform: scale(1.5);
+        }
+
+        .badge {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .logos span {
+            margin: 20px;
+        }
+
+        @keyframes float {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    input:focus, textarea:focus {
+        outline: none;
+        box-shadow: 0 0 10px #ffcc00;
+    }
+
+    button:hover {
+        transform: scale(1.1);
+        background: #ffcc00;
+        color: black;
+    }
+
+    a:hover {
+        transform: scale(1.2);
+        color: #ffcc00;
+    }
+
+        .input {
+            padding-left: 600px;
+            margin-top: 300px;
+        }
+
+        .input input {
+            border-radius: 10px;
+            margin-top: 15px;
+            width: 300px;
+            height: 40px;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 50px 20px;
+        }
+
+        .service-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        h4 {
+            margin-top: -35px;
+            font-family: cursive;
+            color: white;
+            font-weight: bold;
+        }
+
+        header {
+            padding: -2px;
+        }
+
+        .homes li {
+            color: white;
+        }
+
+        /* Hover effects for About section */
+        .about1 {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .about1:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .homes a{
+            color: white;
+        }
+        .extra-item:hover {
+        transform: translateY(-5px);
+        color: #ffffff;
+    }
+
+    .home {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    
+
+    #dynamic-intro {
+        position: relative;
+        z-index: 2; /* Ensure the text is above the overlay */
+        text-align: center;
+        font-family: monospace;
+    }
+
+    .prakhar {
+        position: relative;
+        z-index: 3; /* Ensure the image is above the overlay */
+    }
+
+    .pc {
+        border-radius: 15px; /* Optional styling for the image */
+    }
+    header{
+        margin-top: 10px;
+    }
+    </style>
+</head>
+
+<body class="container-fluid">
+    <header>
+        <div class="parvez">
+            <div class="top">
+                <span>
+                   <img src="../public/images/Banner_RedSkies.png" height="40px" width="230px" alt="">
+                   <span ><a href="" class="text-decoration-none"><h4>Prakhar Chaudhary</h4></a></span>
+                </span>
+
+                <nav class="homes">
+                    <li><button><a href="#ABOUT">About</a></button></li>
+                    <li><button><a href="#SKILLS">Skills</a></button></li>
+                    <li><button><a href="#SERVICE">Service</a></button></li>
+                    <li><button><a href="../public/images/contentPC.jpg" download>Resume</a></button></li>
+                    <li><button><a href="#PROJECTS">Projects</a></button></li>
+                    <li><button><a href="#EXTRAS">Extras</a></button></li>
+                    <li><button><a href="#CONTACT">Contact</a></button></li>
+                </nav>
+                <span class="links">
+                    <a href="http://linkedin.com"><span class="bi bi-linkedin"></span></a>
+                    <a href="http://www.github.com"><span class="bi bi-github"></span></a>
+                    <a href="https://youtube.com/@mrpc_cr?si=zA_9q4Ac5uLYEx15"><span class="bi bi-youtube"></span>
+                    <a href="http://www.instagram.com"><span class="bi bi-instagram"></span></a>
+                    <a href="http://www.facebook.com"><span class="bi bi-facebook"></span></a>
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="home">
+            <!-- Add a shaded overlay -->
+            <div class="overlay"></div>
+    
+            <div id="dynamic-intro" class="intro text-white">
+                <!-- Content will be dynamically populated -->
+            </div>
+    
+            <div class="prakhar">
+                <img class="pc" src="../public/images/prakhar.jpg" alt="unable to load image" height="340px" width="250px" padding-right="100px">
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const introText = [
+                { text: "hi, there", class: "intro" },
+                { text: "it's", class: "intro" },
+                { text: "Prakhar", class: "name" },
+                { text: "Chaudhary", class: "name" },
+                { text: "I'm a Full Stack Developer", class: "subtitle" }
+            ];
+    
+            const introContainer = document.getElementById("dynamic-intro");
+    
+            let wordIndex = 0;
+    
+            function loadWords() {
+                if (wordIndex < introText.length) {
+                    const wordSpan = document.createElement("span");
+                    wordSpan.className = introText[wordIndex].class;
+                    wordSpan.textContent = introText[wordIndex].text;
+                    introContainer.appendChild(wordSpan);
+                    introContainer.appendChild(document.createElement("br")); // Add a line break
+                    wordIndex++;
+                    setTimeout(loadWords, 1000); // Adjust the delay between words
+                }
+            }
+    
+            loadWords();
+        });
+    </script>
+    
+
+        <!-- About Section -->
+        <div >
+            <h1 id="#ABOUT">About</h1>
+            <div id="about-text" class="int font-monospace text-primary">
+                <!-- Content will be dynamically populated -->
+            </div>
+        </div>
+    
+        <script class="container-fluid text-center">
+            document.addEventListener("DOMContentLoaded", () => {
+                const aboutText = [
+                    "I am a tech-savvy and passionate full-stack developer proficient in a variety of programming languages such as Python, Java, C++, JavaScript, and more.",
+                    "As someone who is new to the industry, I bring a versatile skill set, a problem-solving mindset, and a keen interest in building efficient and scalable solutions.",
+                    "With a strong foundation in both frontend and backend technologies, I have successfully worked on multiple projects, including web and software development.",
+                    "My adaptability and constant eagerness to learn help me thrive in dynamic, fast-paced environments, enabling me to deliver high-quality solutions while continuously expanding my knowledge.",
+                    "This portfolio serves as a reflection of my dedication to technology and my journey toward becoming a skilled developer.",
+                    "I am eager to collaborate with like-minded professionals and contribute to impactful projects. Let's connect and build something remarkable together!"
+                ];
+    
+                const aboutContainer = document.getElementById("about-text");
+                let wordIndex = 0;
+                let lineIndex = 0;
+    
+                const observer = new IntersectionObserver((entries) => {
+                    if (entries[0].isIntersecting) {
+                        loadWords();
+                        observer.disconnect(); // Stop observing once triggered
+                    }
+                }, { threshold: 0.1 });
+    
+                observer.observe(aboutContainer);
+    
+                function loadWords() {
+                    if (lineIndex < aboutText.length) {
+                        const words = aboutText[lineIndex].split(" ");
+                        const wordInterval = setInterval(() => {
+                            if (wordIndex < words.length) {
+                                aboutContainer.innerHTML += words[wordIndex] + " ";
+                                wordIndex++;
+                            } else {
+                                clearInterval(wordInterval);
+                                aboutContainer.innerHTML += "<br><br>"; // Add line break after the sentence
+                                wordIndex = 0;
+                                lineIndex++;
+                                loadWords(); // Load next line
+                            }
+                        }, 100); // Adjust the speed of word appearance (milliseconds)
+                    }
+                }
+            });
+        </script>
+
+
+    <aside>
+        <div id="SKILLS">
+            <h1>Skills</h1>
+            <div class="badge">
+                <span><img src="../public/images/badge.png" alt="" height="180px" width="150px"></span>
+                <span><img src="../public/images/badge.png" alt="" height="180px" width="150px"></span>
+                <span><img src="../public/images/badge.png" alt="" height="180px" width="150px"></span>
+                <span><img src="../public/images/badge.png" alt="" height="180px" width="150px"></span>
+                <span><img src="../public/images/badge.png" alt="" height="180px" width="150px"></span>
+                <span><img src="../public/images/badge.png" alt="" height="180px" width="150px"></span>
+                <span><img src="../public/images/badge.png" alt="" height="180px" width="150px"></span>
+            </div>
+            <div class="logos">
+                <span><img src="../public/images/clogo.webp" alt="" height="110px" width="110px"></span>
+                <span><img src="../public/images/c++.webp" alt="" height="100px" width="100px"></span>
+                <span><img src="../public/images/htmllogo.webp" alt="" height="110px" width="110px"></span>
+                <span><img src="../public/images/csslogo.webp" alt="" height="110px" width="110px"></span>
+                <span><img src="../public/images/javaslogo.webp" alt="" height="110px" width="110px"></span>
+                <span><img src="../public/images/pythonlogo.webp" alt="" height="110px" width="110px"></span>
+                <span><img src="../public/images/githublogo.webp" alt="" height="110px" width="110px"></span>
+            </div>
+        </div>
+    </aside>
+
+
+    
+    <div id="SERVICE">
+        <h1>Service</h1>
+        <div class="services">
+            <div class="service-card">
+                <h2>Web Application Development</h2>
+                <p>I create responsive and dynamic web applications tailored to your needs. From user-friendly designs to optimized performance, we ensure your web presence stands out.</p>
+            </div>
+
+            <div class="service-card">
+                <h2>Backend Development</h2>
+                <p>My robust backend solutions handle complex data and ensure seamless integration. Experience top-notch functionality and secure architectures for your applications.</p>
+            </div>
+
+            <div class="service-card">
+                <h2>Mobile Application Development</h2>
+                <p>I'm specialized in building innovative mobile applications with intuitive designs. Reach your audience on the go with custom apps for Android and cross-platform solutions.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="PROJECTS">
+        <h1>Projects</h1>
+        <div class="badge">
+             <span><img src="../public/images/badge1.png" alt="" height="220px" width="150px"></span>
+        </div>
+        <div class="logos">
+            <span><img src="../public/images/githublogo.webp" alt="" height="110px" width="110px"></span>
+        </div>
+    </div>
+
+    
+
+   
+    <section id="CONTACT" style="position: relative; padding: 50px 20px; background: linear-gradient(to right, #1e1e1e, #282828); color: white;">
+        <div class="container">
+            <h1 class="text-center mb-4" style="font-size: 2.5rem; color: #ffcc00; text-shadow: 2px 2px 5px black; animation: float 3s infinite;">
+                Get in Touch
+            </h1>
+            <form action="/submit-contact" method="POST" class="p-4" style="background: rgba(255, 255, 255, 0.1); border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <div class="input-group">
+                        <span class="input-group-text" style="background: #ffcc00; border: none;">
+                            <i class="bi bi-person-fill"></i>
+                        </span>
+                        <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required style="border: none; box-shadow: none;">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <div class="input-group">
+                        <span class="input-group-text" style="background: #ffcc00; border: none;">
+                            <i class="bi bi-envelope-fill"></i>
+                        </span>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required style="border: none; box-shadow: none;">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea id="message" name="message" class="form-control" rows="5" placeholder="Write your message..." required style="border: none; box-shadow: none;"></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary px-5 py-2" style="background: #ffcc00; border: none; color: black; transition: transform 0.3s ease;">
+                        Send
+                    </button>
+                </div>
+            </form>
+            <div class="text-center mt-4">
+                <p>Follow me on:</p>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="http://linkedin.com" class="text-light" style="font-size: 1.5rem; transition: transform 0.3s ease;"><i class="bi bi-linkedin"></i></a>
+                    <a href="http://www.github.com" class="text-light" style="font-size: 1.5rem; transition: transform 0.3s ease;"><i class="bi bi-github"></i></a>
+                    <a href="https://youtube.com/@mrpc_cr" class="text-light" style="font-size: 1.5rem; transition: transform 0.3s ease;"><i class="bi bi-youtube"></i></a>
+                    <a href="http://www.instagram.com" class="text-light" style="font-size: 1.5rem; transition: transform 0.3s ease;"><i class="bi bi-instagram"></i></a>
+                    <a href="http://www.facebook.com" class="text-light" style="font-size: 1.5rem; transition: transform 0.3s ease;"><i class="bi bi-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
